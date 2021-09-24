@@ -12,5 +12,9 @@ RSpec.describe 'the airline show page' do
   end
   it 'shows the list of passengers on the flight who are adults' do
     visit "/airlines/#{@airline_1.id}"
+    expect(page).to have_content(@passenger_1.name)
+    expect(page).to have_content(@passenger_2.name)
+    expect(page).to have_content(@passenger_3.name)
+    expect(page).to_not have_content(@passenger_4.name)
   end
 end
