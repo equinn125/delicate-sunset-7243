@@ -14,7 +14,7 @@ RSpec.describe Airline do
       passenger_2 = flight_1.passengers.create!(name: 'Sally', age: 22)
       passenger_3 = flight_2.passengers.create!(name: 'Jill', age: 35)
       passenger_4 = flight_2.passengers.create!(name: 'Bill', age: 15)
-      expect(airline_1.adult_passenger_list).to eq([passenger_1, passenger_2, passenger_3])
+      expect(airline_1.adult_passenger_list).to eq([passenger_3.name, passenger_1.name, passenger_2.name])
     end
   end
 end
