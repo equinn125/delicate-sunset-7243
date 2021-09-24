@@ -38,6 +38,7 @@ RSpec.describe 'the flights index page' do
         click_on "Remove Passenger"
         expect(current_path).to eq("/flights")
       end
+      expect(page).to_not have_content(@passenger_1.name)
     end
   end
 end
